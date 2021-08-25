@@ -1,5 +1,8 @@
 body {
-	font-family: "Open Sans", sans-serif;
+	background-image: url('https://images.pexels.com/photos/7459424/pexels-photo-7459424.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 h2 {
 	color: #000;
