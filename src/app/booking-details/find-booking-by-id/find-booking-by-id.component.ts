@@ -19,7 +19,7 @@ export class FindBookingByIdComponent implements OnInit {
   constructor(private fb:FormBuilder, private bdService:BookingDetailsService, private activatedRoute:ActivatedRoute) { }
 
 
-  findBookingForm=this.fb.group({
+  bookingDetailsForm=this.fb.group({
     booking_id:['',Validators.required]
   });
 
@@ -28,17 +28,18 @@ export class FindBookingByIdComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
     this.activatedRoute.params.subscribe(data=>this.bookingId=data.bookingId);
+
+
     this.hidden=true;
+    this.bookingDetails=[];
     let response= this.bdService.fetchBookingDetailsById(this.bookingId);
+
     response.subscribe(data=>{this.bookingDetails=[];
                               this.bookingDetails.push(data);
-                              this.hidden=false;
-                            }
-                            ,error=>{alert(error.error)}
-                      );
-                      /* remove these logs before finalising */
-    console.log(this.bookingDetails);
+                              this.hidden=false;},error=>{alert(error.error)});
   }
 
 }

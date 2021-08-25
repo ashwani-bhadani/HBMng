@@ -58,7 +58,7 @@ const routes: Routes = [
    {path:'addBookingDetails',component:AddBookingComponent},
    {path:'fetchAllBookingDetails',component:FetchAllBookingComponent},
    {path:'deleteBookingDetailsById/:id',component:DeleteBookingComponent},
-   {path:'findBookingDetailsById/:id',component:FindBookingByIdComponent},
+   {path:'fetchBookingDetailsById/:id',component:FindBookingByIdComponent},
    {path:'updateBookingDetailsById/:id',component:UpdateBookingComponent},
 ];
 
