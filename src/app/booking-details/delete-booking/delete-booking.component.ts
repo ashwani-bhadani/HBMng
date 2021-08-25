@@ -29,7 +29,7 @@ export class DeleteBookingComponent implements OnInit {
     this.activatedRoute.params.subscribe(data=>this.booking_id=data.booking_id);
     console.log(this.booking_id);
     let response= this.bdService.deleteBookingDetailsById(this.booking_id)
-    //console.log(response);
+    console.log(response);
     response.subscribe();
     alert("deletion - success!");
     /* this.router.navigateByUrl("/fetchAllBookingDetails")}; */

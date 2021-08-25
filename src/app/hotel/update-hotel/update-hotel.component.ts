@@ -20,8 +20,7 @@ export class UpdateHotelComponent implements OnInit {
     email:['',Validators.required],
     phone1:['',Validators.required],
     phone2:['',Validators.required],
-    website:['',Validators.required],
-    rooms:this.fb.array([])
+    website:['',Validators.required]
   })
 
   get rooms(){
