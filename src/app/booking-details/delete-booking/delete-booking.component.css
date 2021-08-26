@@ -1,0 +1,33 @@
+  .center {
+    margin: auto;
+    width: 50%;
+    border: 5px solid #FFFF00;
+    padding: 10px;
+    top: 50%;
+  }
+
+  a {
+    margin:0 auto;    
+    display:block;
+ }
+
+  .cut {
+    height: 10px;
+  }
+
+  input[type="number"] {
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .btn {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .btn:hover {
+    display: block;
+    margin: 0 auto;
+    background-color: #1100ff;
+  }

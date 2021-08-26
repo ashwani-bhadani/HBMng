@@ -2,70 +2,62 @@
 <html>
 
 <head>
-	<title>HTML Redirect</title>
-	<!-- <meta http-equiv="refresh"
-		content="5000; url = http://localhost:4200/fetchAllBookingDetails" /> -->
+  <title>delete and redirect</title>
+  <link rel="stylesheet" type="text/css" href="delete-booking.component.css">
 </head>
 
 <body>
 
-<style>
-  /* 
-.center {
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-border: 5px solid #FFFF00;
-padding: 10px;
-} */
-  .center {
-  margin: auto;
-  width: 50%;
-  border:5px solid #FFFF00;
-  padding: 10px;
-  top: 50%;
-}
+  <h1 style="text-align:center;color:green;">
+    Confrim Delete Booking
+  </h1>
 
-.cut {
-  height: 10px;
-}
-
-input[type="number"] {
-             display: block;
-             margin : 0 auto;
-             align-items: center;
-        }
-
-.btn {
-  display: block;
-             margin : 0 auto;
-}
-
-.btn:hover {
-  display: block;
-             margin : 0 auto;
-             background-color: #1100ff;
-}
-</style>
-
-	<h1 style="text-align:center;color:green;">
-		Confrim Delete Booking
-	</h1>
-
-  <p style="text-align:center;color:red;" >
-		Enter booking id and confirm deletion.
+  <p style="text-align:center;color:red;">
+    Enter booking id and confirm deletion.
     Be advised, deletion in non-recoverable process !
-	</p>
+  </p>
 
   <div class="form">
     <div class="input-container center">
-      <input id="booking_id" class="input" type="number" placeholder="booking id" name="number"[(ngModel)]="booking_id"/>
+      <input id="booking_id" class="input" type="number" placeholder="booking id" name="number"
+        [(ngModel)]="booking_id" />
       <div class="cut"></div>
-      <button type="text" class="submit btn" (click)="deleteBookingDetailsById()" >Delete</button>
+      <button type="text" class="submit btn" (click)="deleteBookingDetailsById()">Delete</button>
     </div>
   </div>
-	
+
+  <a class="back" href="/fetchAllBookingDetails">Go back All Bookings</a>
+
+</body>
+
+</html>
+
+<!-- 
+    <div class="cut"></div>
+  <input class="btn" type="button" value="see all bookings" onclick="DelayRedirect()" />
+
+  <div id="dvCountDown" style="display:none">
+    You will be redirected after <span id="lblCount"></span>&nbsp;seconds.
+  </div>
+  <script type="text/javascript">
+    function DelayRedirect() {
+      var seconds = 5;
+      var dvCountDown = document.getElementById("dvCountDown");
+      var lblCount = document.getElementById("lblCount");
+      dvCountDown.style.display = "block";
+      lblCount.innerHTML = seconds;
+      setInterval(function () {
+        seconds--;
+        lblCount.innerHTML = seconds;
+        if (seconds == 0) {
+          dvCountDown.style.display = "none";
+          window.location = "http://localhost:4200/fetchAllBookingDetails";
+        }
+      }, 1000);
+    }
+  </script>
+ -->
+
 <!-- 	<p style="text-align:center;">
 		If your browser supports Refresh,
 		you'll be redirected to show all bookings, in 5 seconds.
@@ -80,7 +72,3 @@ input[type="number"] {
       <button class="btn btn-danger" type="submit">Submit</button>
     </form>
   </div> -->
-
-</body>
-
-</html>
