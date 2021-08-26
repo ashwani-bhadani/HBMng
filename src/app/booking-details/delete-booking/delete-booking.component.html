@@ -1,10 +1,86 @@
-<!-- <p>delete-booking works!</p>
-<div class="container-fluid">
-    <h2>Enter Booking Id</h2>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HTML Redirect</title>
+	<!-- <meta http-equiv="refresh"
+		content="5000; url = http://localhost:4200/fetchAllBookingDetails" /> -->
+</head>
+
+<body>
+
+<style>
+  /* 
+.center {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+border: 5px solid #FFFF00;
+padding: 10px;
+} */
+  .center {
+  margin: auto;
+  width: 50%;
+  border:5px solid #FFFF00;
+  padding: 10px;
+  top: 50%;
+}
+
+.cut {
+  height: 10px;
+}
+
+input[type="number"] {
+             display: block;
+             margin : 0 auto;
+             align-items: center;
+        }
+
+.btn {
+  display: block;
+             margin : 0 auto;
+}
+
+.btn:hover {
+  display: block;
+             margin : 0 auto;
+             background-color: #1100ff;
+}
+</style>
+
+	<h1 style="text-align:center;color:green;">
+		Confrim Delete Booking
+	</h1>
+
+  <p style="text-align:center;color:red;" >
+		Enter booking id and confirm deletion.
+    Be advised, deletion in non-recoverable process !
+	</p>
+
+  <div class="form">
+    <div class="input-container center">
+      <input id="booking_id" class="input" type="number" placeholder="booking id" name="number"[(ngModel)]="booking_id"/>
+      <div class="cut"></div>
+      <button type="text" class="submit btn" (click)="deleteBookingDetailsById()" >Delete</button>
+    </div>
+  </div>
+	
+<!-- 	<p style="text-align:center;">
+		If your browser supports Refresh,
+		you'll be redirected to show all bookings, in 5 seconds.
+	</p> -->
+
+<!--   <div class="container-fluid center" >
+    <h2 style="text-align:center;color:red; font-style: italic;">Enter Booking Id</h2>
     <form [formGroup]="bookingDetailsForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <input formControlName="bookingID" id="id"type="number">
+        <input formControlName="booking_id" id="id"type="number">
       </div>
       <button class="btn btn-danger" type="submit">Submit</button>
     </form>
   </div> -->
+
+</body>
+
+</html>

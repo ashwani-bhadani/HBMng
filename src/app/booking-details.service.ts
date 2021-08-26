@@ -35,7 +35,7 @@ export class BookingDetailsService {
     return this.http.get<any>("http://localhost:7000/bookingdetails/bookingdetails/"+userData);
   }
 
-  deleteBookingDetailsById(userData:any){
+  deleteBookingDetailsById(userData:number){
     console.log(userData);
     return this.http.delete("http://localhost:7000/bookingdetails/deletebookingdetails/"+userData);
   }

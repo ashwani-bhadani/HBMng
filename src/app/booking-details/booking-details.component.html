@@ -1,1 +1,11 @@
-<p>booking-details works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/fetchAllBookingDetails">Show All Bookings</a>
+      </div>
+    </div>
+    <form class="form-inline my-2 my-lg-0 ml-auto">
+      <input class="form-control" type="search" placeholder="find by booking id" aria-label="Search" [(ngModel)]="booking_id" [ngModelOptions]="{standalone: true}">
+      <a href="/fetchBookingDetailsById/{{booking_id}}" class="btn btn-primary btn-md my-2 my-sm-0 ml-3">Search</a>
+    </form>
+  </nav>
