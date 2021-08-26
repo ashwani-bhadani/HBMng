@@ -33,66 +33,74 @@
 
         <form [formGroup]="bookingDetailsForm" (ngSubmit)="onSubmit()">
 
-            <div class="form-group">
+            <div class="form-group  success">
 
                 <label>Booking Id</label>
 
                 <input formControlName="booking_id" type="number" class="form-control" id="booking_id"
                     placeholder="enter booking id">
 
+                <small></small>
+                
             </div>
 
-            <div class="form-group">
+            <div class="form-group  success">
 
                 <label>Hotel Id</label>
 
                 <input formControlName="hotel_id" type="number" class="form-control" id="hotel_id"
                     placeholder="enter hotel id">
-
+                
+                    <small></small>
             </div>
 
-            <div class="form-group">
+            <div class="form-group  success">
 
                 <label>User Name</label>
 
                 <input formControlName="username" type="text" class="form-control" id="username" placeholder="johnDoe29"
                     pattern="[A-Z\sa-z]{3,20}">
 
+                    <small></small>
             </div>
 
             <hr>
 
-            <div class="form-group inlined">
+            <div class="form-group  success inlined">
 
                 <label for="checkin-date">Check-in Date</label>
 
                 <input formControlName="booked_from" type="date" class="form-control" id="checkin-date" name="checkin">
 
+                <small></small>
             </div>
 
-            <div class="form-group inlined">
+            <div class="form-group  success inlined">
 
                 <label for="checkout-date">Check-out Date</label>
 
                 <input formControlName="booked_to" type="date" class="form-control" id="checkout-date" name="checkout">
 
+                <small></small>
             </div>
 
-            <div class="form-group inlined">
+            <div class="form-group  success inlined">
 
                 <label>Number of Adults</label>
 
                 <input formControlName="no_of_adults" type="number" class="form-control" id="no_of_adults"
                     placeholder="ex: 2 !(minimum = 1)" min="1">
 
+                    <small></small>
             </div>
 
-            <div class="form-group inlined">
+            <div class="form-group  success inlined">
                 <label>Number of Children</label>
 
                 <input formControlName="no_of_children" type="number" class="form-control" id="no_of_children"
                     placeholder="ex: 2" min="0">
 
+                    <small></small>
             </div>
 
 
@@ -107,11 +115,12 @@
 
             <hr>
 
-            <div class="form-group">
+            <div class="form-group  success">
                 <label>Total Amount</label>
                 <input formControlName="totalAmount" type="number" class="form-control" id="total_amount"
                     placeholder="ex: 5500">
 
+                    <small></small>
             </div>
 
 
@@ -119,10 +128,13 @@
             <button  class="btn btn-primary" type="submit">Confirm & Pay</button>
 
         </form>
-        {{bookingDetailsForm.value | json}}
+        <!-- {{bookingDetailsForm.value | json}} -->
     </div>
 
     <div class="clear"></div>
+
+    <!-- <script src="add-bboking.js"></script> -->
+
 </body>
 
 </html>
