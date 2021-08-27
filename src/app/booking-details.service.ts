@@ -32,7 +32,7 @@ export class BookingDetailsService {
 
   fetchBookingDetailsById(userData:any){
     console.log(userData);
-    return this.http.get<any>("http://localhost:7000/bookingdetails/bookingdetails/"+userData);
+    return this.http.get("http://localhost:7000/bookingdetails/bookingdetails/"+userData);
   }
 
   deleteBookingDetailsById(userData:number){
@@ -40,8 +40,30 @@ export class BookingDetailsService {
     return this.http.delete("http://localhost:7000/bookingdetails/deletebookingdetails/"+userData);
   }
 
-  updateBookingDetails(bookId:number,userData:any){
+  updateBookingDetails(userData:any){
     console.log(userData);
-    return this.http.put<any>("http://localhost:7000/bookingdetails/updatebookingdetails/"+userData,bookId);
+    return this.http.put<any>("http://localhost:7000/bookingdetails/updatebookingdetails/"+userData.booking_id,userData);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   updateBookingDetails(userData:any){
+    console.log(userData);
+    return this.http.put<any>("http://localhost:7000/bookingdetails/updatebookingdetails/"+userData.booking_id,userData);
+  } 
+  
+    updateHotel(userData:any){
+    return this.http.put("http://localhost:7000/updateHotel/"+userData.hotel_id,userData);
+  }
+  */

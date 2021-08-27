@@ -19,6 +19,11 @@ export class BookingDetailsComponent implements OnInit {
   setBookingId(booking_id:number){
     this.booking_id=booking_id;
   }
+/* 
+  onSubmit(){
+    //console.log(this.registrationForm.value);
+    this.bdService.updateHotel(this.registrationForm.value).subscribe(response=>{console.log('Success!',response);alert("Success!")},error=>console.error('Error!',error));
+  } */
 
   ngOnInit(): void {
   }

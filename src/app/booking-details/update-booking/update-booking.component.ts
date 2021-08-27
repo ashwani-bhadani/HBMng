@@ -11,7 +11,7 @@ export class UpdateBookingComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private bdService: BookingDetailsService) { }
 
-  bookingDetailsForm = this.fb.group({
+  bookingDetailsUpdateForm = this.fb.group({
     booking_id: ['', Validators.required],
     hotel_id: ['', Validators.required],
     username: ['', Validators.required],
@@ -22,20 +22,9 @@ export class UpdateBookingComponent implements OnInit {
     totalAmount: ['', Validators.required]
   })
 
-  bookingDetailsForm2 = this.fb.group({
-    booking_id: ['', Validators.required]
-  })
-
-  get room_no() {
-    return this.bookingDetailsForm.get('roomNo') as FormArray;
-  }
-
-  add_room_no() {
-    this.room_no.push(this.fb.control(''));
-  }
-
-  onSubmit() {
-    this.bdService.updateBookingDetails(this.bookingDetailsForm2.value, this.bookingDetailsForm.value).subscribe(response => { console.log('Success!', response); alert("Success!") }, error => console.error('Error!', error));
+  onSubmit(){
+    console.log(this.bookingDetailsUpdateForm.value);
+    this.bdService.updateBookingDetails(this.bookingDetailsUpdateForm.value).subscribe(response=>{console.log('Success!',response);alert("Update Success!")},error=>console.error('Error! Try again',error));
   }
 
 
@@ -43,3 +32,29 @@ export class UpdateBookingComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+/*   onSubmit() {
+    this.bdService.updateBookingDetails(this.bookingDetailsUpdateForm.value).subscribe(response => { console.log('Success!', response); alert("Success!") }, error => console.error('Error!', error));
+  } */
+/* get room_no() {
+  return this.bookingDetailsForm.get('roomNo') as FormArray;
+}
+
+  bookingDetailsForm2 = this.fb.group({
+
+ booking_id: ['', Validators.required]
+  })this.bookingDetailsForm2.value, 
+
+add_room_no() {
+  this.room_no.push(this.fb.control(''));
+} */

@@ -9,9 +9,9 @@ import { BookingDetailsService } from 'src/app/booking-details.service';
 })
 export class FetchAllBookingComponent implements OnInit {
 
-  constructor(private bdService:BookingDetailsService, private  activatedRoute:ActivatedRoute) { }
-
   bookingDetailsAll: any;
+
+  constructor(private bdService:BookingDetailsService, private  activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {    
     let response=this.bdService.fetchAllBookingDetails()

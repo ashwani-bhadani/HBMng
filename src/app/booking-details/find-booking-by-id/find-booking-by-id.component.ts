@@ -10,36 +10,38 @@ import { BookingDetailsService } from 'src/app/booking-details.service';
 })
 export class FindBookingByIdComponent implements OnInit {
 
-  bookingId=0;
+  bookingId = '';
 
-  public hidden:boolean=true;
+  public hidden: boolean = true;
 
-  bookingDetails:any[]=[];
+  bookingDetails: any[] = [];
 
-  constructor(private fb:FormBuilder, private bdService:BookingDetailsService, private activatedRoute:ActivatedRoute) { }
+  constructor(private fb: FormBuilder, private bdService: BookingDetailsService, private activatedRoute: ActivatedRoute) { }
 
 
-  bookingDetailsForm=this.fb.group({
-    booking_id:['',Validators.required]
+  bookingDetailsForm = this.fb.group({
+    booking_id: ['', Validators.required]
   });
 
-  onSubmit(){
-    alert(this.bookingId);
+  onSubmit() {
+    alert("booking id: " + this.bookingId + " details");
   }
 
   ngOnInit(): void {
 
 
-    this.activatedRoute.params.subscribe(data=>this.bookingId=data.bookingId);
+    this.activatedRoute.params.subscribe(data => this.bookingId = data.bookingId);
 
 
-    this.hidden=true;
-    this.bookingDetails=[];
-    let response= this.bdService.fetchBookingDetailsById(this.bookingId);
+    this.hidden = true;
+    this.bookingDetails = [];
+    let response = this.bdService.fetchBookingDetailsById(this.bookingId);
 
-    response.subscribe(data=>{this.bookingDetails=[];
-                              this.bookingDetails.push(data);
-                              this.hidden=false;},error=>{alert(error.error)});
+    response.subscribe(data => {
+      this.bookingDetails = [];
+      this.bookingDetails.push(data);
+      this.hidden = false;
+    }, error => { alert(error.error) });
   }
 
 }

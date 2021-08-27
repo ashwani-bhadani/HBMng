@@ -15,60 +15,87 @@
     </div>
     <div class="subtitle">Enter the details to be updated</div>
 
+    <form [formGroup]="bookingDetailsUpdateForm" (ngSubmit)="onSubmit()">
 
     <div class="input-container ic1">
       <label for="booking_id" class="placeholder">Booking Id</label>
       <div class="cut"></div>
-      <input id="bookingId" class="input" type="number" placeholder="booking id" />
+      <input formControlName="booking_id" id="bookingId" class="input" type="number" placeholder="booking id" />
     </div>
 
     <div class="input-container ic2">
       <label for="hotel_id" class="placeholder">Hotel Id</label>
       <div class="cut"></div>
-      <input id="hotelId" class="input" type="number" placeholder="hotel id" />
+      <input formControlName="hotel_id"  id="hotelId" class="input" type="number" placeholder="hotel id" />
     </div>
 
     <div class="input-container ic2">
       <label for="username" class="placeholder">User Name</label>
       <div class="cut"></div>
-      <input id="userName" class="input" type="text" placeholder="enter username" />
+      <input formControlName="username"  id="userName" class="input" type="text" placeholder="enter username" />
     </div>
 
     <div class="input-container ic2">
       <label for="booked_from" class="placeholder">Booked From</label>
       <div class="cut"></div>
-      <input id="bookedFrom" class="input" type="date" placeholder="check-in date" />
+      <input formControlName="booked_from"  id="bookedFrom" class="input" type="date" placeholder="check-in date" />
     </div>
 
     <div class="input-container ic2">
       <label for="booked_to" class="placeholder">Booked To</label>
       <div class="cut"></div>
-      <input id="bookedTo" class="input" type="date" placeholder="check-out date" />
+      <input formControlName="booked_to"  id="bookedTo" class="input" type="date" placeholder="check-out date" />
     </div>
 
     <div class="input-container ic2">
       <label for="no_of_adults" class="placeholder">Number Of Adults</label>
       <div class="cut"></div>
-      <input id="adults" class="input" type="text" placeholder="no of adults" />
+      <input formControlName="no_of_adults"  id="adults" class="input" type="text" placeholder="no of adults" />
     </div>
 
     <div class="input-container ic2">
       <label for="no_of_children" class="placeholder">Number Of Children</label>
       <div class="cut"></div>
-      <input id="children" class="input" type="number" placeholder="no of children " />
+      <input formControlName="no_of_children"  id="children" class="input" type="number" placeholder="no of children " />
 
     </div>
 
     <div class="input-container ic2">
       <label for="totalAmount" class="placeholder">Total Amount</label>
       <div class="cut"></div>
-      <input id="amount" class="input" type="number" placeholder="enter total billing amount" />
+      <input formControlName="totalAmount"  id="amount" class="input" type="number" placeholder="total bill amount" />
     </div>
 
-    <!-- (click)="updateBookingDetails -->
     <button type="text" class="submit btn">Save Changes</button>
+
+  </form>
+
+  <!-- {{bookingDetailsUpdateForm.value | json}} -->
+  
   </div>
   <div class="clear"></div>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- (click)="updateBookingDetails -->
